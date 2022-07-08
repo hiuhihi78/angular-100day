@@ -1,4 +1,4 @@
-<h2>Day 3: Data binding</h2>
+<h2 [class.heading]="true">Day 3: Data binding</h2>
 <p>Start editing to see some magic happen :)</p>
 
 <!-- {{expression}} -->
@@ -22,10 +22,11 @@
   (ngModelChange)="twoWayDataBinding = $event"
 />
 
-<h2>Day 4: ngIf, hidden</h2>
+<h2 [class.heading]="true">Day 4: ngIf, hidden</h2>
 <!-- day 4 -->
 <!-- NgIf Structural Directive of [hiden]
 dung de k hien thi ngoai DOM
+- Structural Directive : thay doi cau truc cua DOM
 - symtax : *ngIf="expression else nameTemplate"
 - do eles:
 <ng-template #nameTemplate></ng-template>
@@ -46,4 +47,39 @@ dung de k hien thi ngoai DOM
 <span>{{ user.age }}</span>
 <button type="button" (click)="user.age = user.age + 1">+</button>
 
-<h2>Day 5:NgFor Structural Directive</h2>
+<h2 [class.heading]="true">Day 5:NgFor Structural Directive</h2>
+<!-- day 5 -->
+<!-- NgFor Structural Directive
+- symtax: 
+
+  + foreach: *ngFor="let varibleName of list"
+
+-->
+
+<ul>
+  <ng-container *ngIf="users.length > 100; else noUser">
+    <li
+      *ngFor="
+        let user of users;
+        index as idx;
+        let count = count;
+        let first = first;
+        let last = last;
+        let odd = odd;
+        let even = even
+      "
+    >
+      <p>{{ user.id }} - {{ user.name }}</p>
+      <p>index - {{ idx }} out of {{ count }}</p>
+      <p>Iam {{ odd ? 'odd num' : 'even num' }}</p>
+      <p *ngIf="first">Iam first</p>
+      <p *ngIf="last">Iam first</p>
+    </li>
+  </ng-container>
+  <ng-template #noUser><h3>List user is empty</h3></ng-template>
+</ul>
+
+<!-- cach viet dai -->
+<ul>
+  <ng-template ngFor [ngForOf]="users" let-user let-idx="index"></ng-template>
+</ul>
