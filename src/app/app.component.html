@@ -1,4 +1,22 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<p>Start editing to see some magic happen :)</p>
+
+<!-- {{expression}} -->
+<p>{{ user.name }}</p>
+<p>{{ user.age }}</p>
+<!-- data binding-->
+<!-- proproty binding [type]="inputType" -->
+<input [type]="inputType" value="{{ user.name }}" />
+<!-- event binding (click) = "handler"-->
+<button type="button" (click)="handler($event)">Click</button>
+<!-- two-way databinding
+  -require:  use FormMoule -> is working with form
+  - symtax :[(ngModel)]="twoWayDataBinding" 
+
+-->
+<p>{{ twoWayDataBinding }}</p>
+<br />
+<input
+  type="text"
+  [ngModel]="twoWayDataBinding"
+  (ngModelChange)="twoWayDataBinding = $event"
+/>
