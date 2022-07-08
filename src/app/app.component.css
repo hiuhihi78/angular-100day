@@ -5,3 +5,18 @@ p {
 .heading {
   color: aqua;
 }
+
+.box {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+.red-boder {
+  border: 1px solid red;
+}
+
+.yellow-background {
+  background-color: yellow;
+}

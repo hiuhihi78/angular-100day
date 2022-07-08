@@ -23,6 +23,8 @@ export class AppComponent {
     console.log(event);
   }
 
+  isDanger: boolean = false;
+  isWarning: boolean = false;
   users = [
     {
       id: 1,

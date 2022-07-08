@@ -83,3 +83,17 @@ dung de k hien thi ngoai DOM
 <ul>
   <ng-template ngFor [ngForOf]="users" let-user let-idx="index"></ng-template>
 </ul>
+<h2 [class.heading]="true">Day 6:Class & Style Binding</h2>
+
+<!-- class binding 
+- symtax: [class.nameclass]: true or [class]="{'nameClass':true,'nameClass:'true'}"
+
+-->
+<button (click)="isDanger = !isDanger">Danger</button>
+<button (click)="isWarning = !isWarning">Warning</button>
+<div
+  class="box"
+  [class]="{ 'red-boder': isDanger, 'yellow-background': isWarning }"
+></div>
+
+<p [style.color]="'red'" [style]="{ backgroundColor: 'blue' }">Style bidding</p>
