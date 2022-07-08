@@ -1,3 +1,4 @@
+<h2>Day 3: Data binding</h2>
 <p>Start editing to see some magic happen :)</p>
 
 <!-- {{expression}} -->
@@ -19,5 +20,30 @@
   type="text"
   [ngModel]="twoWayDataBinding"
   (ngModelChange)="twoWayDataBinding = $event"
-  
 />
+
+<h2>Day 4: ngIf, hidden</h2>
+<!-- day 4 -->
+<!-- NgIf Structural Directive of [hiden]
+dung de k hien thi ngoai DOM
+- symtax : *ngIf="expression else nameTemplate"
+- do eles:
+<ng-template #nameTemplate></ng-template>
+-->
+
+<hello [hidden]="user.age < 21" [name]="twoWayDataBinding"></hello>
+
+<hello
+  *ngIf="user.age >= 21; else ageUnder21"
+  [name]="twoWayDataBinding"
+></hello>
+<ng-template #ageUnder21>
+  <h2 style="color:red">You are too young to see this content</h2>
+</ng-template>
+<br />
+
+<button type="button" (click)="user.age = user.age - 1">-</button>
+<span>{{ user.age }}</span>
+<button type="button" (click)="user.age = user.age + 1">+</button>
+
+<h2>Day 5:NgFor Structural Directive</h2>

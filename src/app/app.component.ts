@@ -10,7 +10,7 @@ export class AppComponent {
 
   user = {
     name: 'haha',
-    age: '19',
+    age: 20,
   };
   twoWayDataBinding = 'hieuldhe150703';
 
