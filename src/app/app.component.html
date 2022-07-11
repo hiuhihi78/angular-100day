@@ -108,4 +108,14 @@ dung de k hien thi ngoai DOM
 <app-progess-bar [progress]="currentProgress"></app-progess-bar>
 
 <h2 [class.heading]="true">Day 8:Output binding</h2>
+<!-- output event bidng -->
 <!--event up: child component interact with prarent component -->
+<app-author-list></app-author-list>
+
+<h2 [class.heading]="true">Day 9:Custome 2-way databinding</h2>
+
+<!-- [()] => ng model co ca databidng va event binding -->
+<!-- ngMOdel thuoc FormModule -->
+<p>{{ name }}</p>
+<input type="text" [(ngModel)]="name" />
+<input type="text" [ngModel]="name" (ngModelChange)="name = $event" />

@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Author } from './author';
 @Component({
   selector: 'app-author-details',
   templateUrl: './author-details.component.html',
-  styleUrls: ['./author-details.component.css']
+  styleUrls: ['./author-details.component.css'],
 })
 export class AuthorDetailsComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
+  @Input() author: Author;
+  @Output() select = new EventEmitter<Author>();
+  @Output() delete = new EventEmitter<number>();
 }
