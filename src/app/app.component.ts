@@ -257,4 +257,5 @@ export class AppComponent {
       },
     },
   ];
+  currentProgress = 39;
 }

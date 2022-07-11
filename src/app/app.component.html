@@ -97,3 +97,15 @@ dung de k hien thi ngoai DOM
 ></div>
 
 <p [style.color]="'red'" [style]="{ backgroundColor: 'blue' }">Style bidding</p>
+
+<h2 [class.heading]="true">Day 7:Input binding</h2>
+<!--Data down: parent component interact with child component -->
+<app-progess-bar></app-progess-bar>
+<br />
+<button (click)="currentProgress = currentProgress + 1">
+  Increae progress
+</button>
+<app-progess-bar [progress]="currentProgress"></app-progess-bar>
+
+<h2 [class.heading]="true">Day 8:Output binding</h2>
+<!--event up: child component interact with prarent component -->
